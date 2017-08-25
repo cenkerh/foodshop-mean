@@ -1,0 +1,47 @@
+div.menu {
+    width: 300px;
+}
+
+.footer_mainDIV {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.footer_leftDIV {
+    text-align: left; 
+    position : absolute;
+    top: 0px;
+    left: 20px;
+    height: 50px;
+    width: 33%;
+    margin: auto;
+}
+
+.footer_middleDIV {
+    height: 50px;
+    width: 33%;
+    margin: auto;
+
+}
+
+.footer_rightDIV {
+    text-align: right;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    height: 50px;
+    width: 33%;
+    margin: auto;
+}
+@media all and (max-width: 480px)
+ {
+   .footer_leftDIV, .footer_middleDIV, .footer_rightDIV
+   {
+     width:100%;
+        position:relative;
+        text-align:left;
+        left:0;
+     /* Add other alignment related styles*/
+    }
+ }

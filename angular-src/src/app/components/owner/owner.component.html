@@ -1,0 +1,35 @@
+<div class="footer_mainDIV">
+  <div class="footer_leftDIV">
+    <h2 class="page-header">Orders</h2>
+    <ul class="list-group">
+      <li *ngFor="let items of order" class="list-group-item">
+        <button (click)="onTheWay(items)" class="btn btn-success" role="button">On The Way</button>
+        <button (click)="reject(items)" class="btn btn-danger" role="button">Reject</button>
+        <tr>Username : {{items.username}}</tr>
+        <tr>Order Time : {{items.orderTime}}</tr>
+        <tr>Status : {{items.status}}</tr>
+        <ul class="list-group">
+          <li *ngFor="let item of items.order" class="list-group-item list-group-item-success">
+            <tr>Name : {{item.name}}</tr>
+            <tr>Price : {{item.price}}</tr>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="footer_rightDIV">
+    <h2 class="page-header">Add New Menu</h2>
+    <label for="name">Name :</label>
+    <input type="text" #name><br>
+    <label for="price">Price :</label>
+    <input type="text" #price><br>
+    <button (click)="addNewMenu(name.value,price.value)" class="btn btn-success" role="button">Add New Menu</button>
+
+    <h2 class="page-header">Add New Flash Deal</h2>
+    <label for="name1">Name :</label>
+    <input type="text" #name1><br>
+    <label for="price1">Price :</label>
+    <input type="text" #price1><br>
+    <button (click)="addNewFlashDeal(name1.value,price1.value)" class="btn btn-success" role="button">Add New Flash Deal</button>
+  </div>
+</div>

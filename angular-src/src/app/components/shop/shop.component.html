@@ -1,0 +1,30 @@
+<div class="footer-text footer_mainDIV">
+  <div class="footer_leftDIV" *ngIf="menu">
+    <h2 class="page-header">MENU</h2>
+    <ul class="list-group">
+      <li *ngFor="let item of menu" class="list-group-item">
+        <a>{{item.name}}</a>
+        <button (click)="addToBasket(item)" class="btn btn-success" role="button" style="float:right">{{item.price}} TL</button>
+      </li>
+    </ul>
+  </div>
+  <div class="footer_middleDIV" *ngIf="menu">
+      <h2 class="page-header">Flash Deals</h2>
+      <ul class="list-group ">
+        <li *ngFor="let item of deal" class="list-group-item list-group-item-danger">
+          <a>{{item.name}}</a>
+          <button (click)="addToBasket(item)" class="btn btn-success" role="button" style="float:right">{{item.price}} TL</button>
+        </li>
+      </ul>
+    </div>
+  <div class="footer_rightDIV menu" style="float:right" *ngIf="menu">
+    <h2 class="page-header">Basket</h2>
+    <ul class="list-group">
+      <li *ngFor="let order of basket" class="list-group-item">
+        <td style="float:left">{{order.name}}</td>
+        <button (click)="deleteFromBasket(order)" class="btn btn-success" role="button" >{{order.price}} TL</button>
+    </ul>
+    <td style="float:right">Total Price : {{total}} TL</td><br>
+    <button (click)="sendOrder()" class="btn btn-success" role="button">Order</button>
+  </div>
+</div>

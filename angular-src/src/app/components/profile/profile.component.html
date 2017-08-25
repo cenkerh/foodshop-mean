@@ -1,0 +1,34 @@
+<div class="footer_mainDIV">
+  <div *ngIf="user" class="footer_leftDIV">
+    <h2 class="page-header">My Orders</h2>
+    <ul class="list-group">
+      <li *ngFor="let items of order" class="list-group-item">
+        <button (click)="takeOrder(items)" class="btn btn-success" role="button">Take Order</button>
+        <button (click)="cancelOrder(items)" class="btn btn-danger" role="button">Cancel Order</button>
+        <a>{{items.status}}</a>
+        <ul class="list-group">
+          <li *ngFor="let item of items.order" class="list-group-item list-group-item-success">
+            {{item.name}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="user" class="footer_rightDIV">
+    <h2 class="page-header">Personal Informations</h2>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <td>Username : {{user.username}}</td>
+      </li>
+      <li class="list-group-item">
+        <td>Name : {{user.name}}</td>
+      </li>
+      <li class="list-group-item">
+        <td>Email : {{user.email}}</td>
+      </li>
+      <li class="list-group-item">
+        <td>Address : {{user.address}}</td>
+      </li>
+    </ul>
+  </div>
+</div>
